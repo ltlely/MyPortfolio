@@ -130,14 +130,16 @@
   }
   
   .about-card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
     height: 120px; /* Default height */
     width: 120px; /* Default width */
-    margin-right: 70px;
-    margin-left: 55px;
-    object-fit: contain;
+    object-fit: contain; /* Ensure the image fits within the dimensions */
+    margin: 0 auto; /* Center the image horizontally */
+    position: relative; /* Optional: For additional fine-tuning */
+    left: 0; /* Reset any horizontal offsets */
+    top: 0; /* Reset any vertical offsets */
   }
   
   /* Mobile Styles */
