@@ -167,7 +167,9 @@ body,
 .timeline-event.visible {
   opacity: 1;
   transform: translateY(0);
-  left: -0.6%; /* Center horizontally */
+  transform: translateX(-4px);
+  position: relative; /* Ensure it stays within the flow of its container */
+  margin: 0 auto; /* Center horizontally */
 }
 
 @media (max-width: 768px) {
