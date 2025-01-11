@@ -717,8 +717,8 @@ body,
 
 @media (max-width: 768px) {
   .popup-message {
-    top: 21%; /* Adjust vertical position for smaller screens */
-    left: 67%;
+    top: 15%; /* Adjust vertical position for smaller screens */
+    left: 62.3%;
     font-size: 0.9rem; /* Slightly smaller font size */
     padding: 6px 10px; /* Reduce padding */
     max-width: 150px; /* Limit width for small screens */
