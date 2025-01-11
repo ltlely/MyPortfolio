@@ -1,0 +1,179 @@
+body,
+.app {
+  background-color: var(--timeline-content-bg); /* Use the dark mode background variable */
+  color: var(--text-primary); /* Use appropriate text color */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure it covers the full viewport */
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 80%;
+  border-left: 2px solid var(--timeline-border-color);
+  background-color: transparent;
+  min-height: 100%;
+}
+
+/* Timeline Event Styling */
+.timeline-event {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Offset slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Timeline Circle */
+.timeline-event::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--timeline-dot-color);
+  border-radius: 50%;
+  border: 3px solid var(--timeline-dot-border-color);
+  box-shadow: 0 0 0 2px var(--timeline-dot-color);
+}
+
+/* Timeline Event Content */
+.timeline-event .content {
+  background-color: var(--timeline-content-bg);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 15px;
+}
+
+.timeline-event .content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.timeline-event .content .location {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.timeline-event .content .date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.timeline-event .content ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+.timeline-event .content ul li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Visible Class for Timeline Events */
+.timeline-event.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move into place */
+}
+
+/* Hover Effect */
+.timeline-event .content:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Alternate Background for Even and Odd Events */
+.timeline-event:nth-child(even) .content {
+  background-color: var(--timeline-content-bg-alt);
+}
+
+.timeline-event:nth-child(odd) .content {
+  background-color: var(--timeline-content-bg);
+}
+
+/* Light Mode Variables */
+.app.light-mode {
+  --timeline-border-color: #ccc;
+  --timeline-dot-color: #eeb2bf;
+  --timeline-dot-border-color: #fff;
+  --timeline-content-bg: #fff;
+  --timeline-content-bg-alt: #f9f9f9;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-tertiary: #999;
+}
+
+/* Dark Mode Variables */
+.app.dark-mode {
+  --timeline-border-color: #444;
+  --timeline-dot-color: #eeb2bf;
+  --timeline-dot-border-color: #333;
+  --timeline-content-bg: #222;
+  --timeline-content-bg-alt: #333;
+  --text-primary: #ddd;
+  --text-secondary: #aaa;
+  --text-tertiary: #888;
+}
+
+/* Filter Container */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.filter-button:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Timeline Event Styles */
+.timeline-wrapper {
+  padding: 20px;
+  min-height: 100%;
+}
+
+.timeline-event {
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-event .content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

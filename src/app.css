@@ -1,0 +1,559 @@
+
+.child-element {
+  background: transparent; /* Inherit the parent's background */
+}
+
+/* Light mode variables */
+:root {
+  --background-color: #ffffff; /* Light mode background */
+  --text-color: #333333; /* Light mode text color */
+  --timeline-border-color: #ccc;
+}
+
+/* Dark mode variables */
+:root.dark {
+  --background-color: #121212; /* Dark mode background */
+  --text-color: #f5f5f5; /* Dark mode text color */
+  --timeline-border-color: #444;
+}
+
+.parent-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0; 
+  padding: 0 50px; 
+  top: 10px;
+  position: relative;
+
+}
+
+#portfolio {
+  font-size: 10px;
+  font: bold;
+}
+
+#content-header {
+  display: flex;
+  gap: 20px;
+  font-size: 7px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none
+}
+
+#content-header h1:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+
+.parent-typewriter {
+  justify-content: center;
+  display: flex;
+}
+
+.typewriter {
+  margin-top: 170px;
+}
+
+.typewriter h1 {
+  width: 10ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 3em;
+}
+
+@media (max-width: 480px) {
+  .typewriter h1 {
+    font-size: 2.5em; /* Further reduce font size for smaller screens */
+    width: 8ch; /* Adjust width for very small screens */
+    border-right: 1.5px solid; /* Optional: even thinner border */
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+/* General Cursor Styling */
+.cursor {
+  z-index: 1000 !important;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.paste {
+  position: absolute;
+  top: 10%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  opacity: 1; /* Default visible */
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth hover effects */
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1; /* Lower than cursor */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#paste-text span {
+  z-index: 0;
+}
+
+.app.light-mode .cursor {
+  background: url('../public/assets/cursor.png') no-repeat center center;
+  background-size: cover;
+}
+
+.app.dark-mode .cursor {
+  background: url('../public/assets/cursor-dark.png') no-repeat center center;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+}
+
+.cursor.initial {
+  animation: move-to-center 2s forwards;
+  z-index: 9999;
+}
+
+.cursor.second {
+  animation: move-to-second-position 1s forwards;
+  z-index: 9999;
+}
+
+@keyframes move-to-center {
+  from {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+  to {
+    top: 9%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes move-to-second-position {
+  from {
+    top: 9%; 
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 10%; 
+    left: 54%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes move-to-center {
+    from {
+      top: 100%;
+      left: 100%;
+      transform: translate(-100%, -100%);
+    }
+    to {
+      top: 9%; /* Adjusted for mobile */
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes move-to-second-position {
+    from {
+      top: 9%; /* Match starting position */
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    to {
+      top: 8%; /* Adjusted for mobile */
+      left: 51%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .paste {
+    top: 8%; /* Adjust position for mobile screens */
+    left: 50%; /* Centered horizontally */
+    width: 40px; /* Slightly smaller width */
+    height: 15px; /* Slightly smaller height */
+    padding: 3px 8px; /* Adjust padding */
+    font-size: 12px; /* Smaller font size */
+    border-radius: 6px; /* Adjust border radius */
+  }
+}
+
+.paste.visible {
+  opacity: 1; 
+}
+
+.paste:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.paste:active {
+  background-color: #e5e5e5;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.parent-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  animation: fadeIn 0.5s ease-in-out;
+  top: 5.7%;
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    width: 150px; /* Slightly smaller for mobile */
+    height: 150px;
+    position: absolute;
+    animation: fadeIn 0.5s ease-in-out;
+    top: 6.0%;
+    z-index: 999;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.about{
+  padding: 20px;
+  min-height: 50vh; /* Ensure full height to match screen */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin-top: 200px;
+}
+
+
+
+.experience {
+  padding: 20px;
+  min-height: 100vh; /* Ensure full height to match screen */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+.app.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.app.light-mode h1, .app.light-mode h3 {
+  color: black;
+}
+
+
+.app.dark-mode {
+  background-color: #121212; 
+  color: #f5f5f5; 
+}
+
+.app.dark-mode h1, .app.dark-mode h3 {
+  color: #f5f5f5;
+}
+
+.app {
+  position: relative; /* Parent container positioning */
+}
+
+.toggle-button {
+  position: absolute; 
+  top: 5%; 
+  right: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; 
+  height: 50px; 
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .toggle-button {
+    position: absolute; 
+    top: 5%; 
+    right: 27%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; 
+    height: 50px; 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+
+.toggle-button img {
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.app.dark-mode .sun-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+}
+.toggle-button img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.social-icons {
+  background-color: transparent; 
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px; 
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.app.light-mode .icon {
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3; 
+  filter: none; 
+}
+
+
+.app.dark-mode .icon {
+  background-color: transparent; 
+  filter: invert(100%) brightness(120%); 
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.app.light-mode .icon {
+  background-color: var(--light-mode-bg);
+  border: none; 
+}
+
+.bio {
+  text-align: center; /* Center the text horizontally */
+  margin-top: 0px; /* Add space below parent-typewriter */
+  padding: 0 20px; /* Add padding for better readability on smaller screens */
+  max-width: 500px; /* Limit the width of the bio text */
+  word-wrap: break-word; /* Ensure long words or URLs wrap properly */
+  overflow-wrap: break-word; /* Compatibility for breaking text */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  margin-bottom: 50px;
+}
+
+.bio h2 {
+  font-size: 1rem; /* Adjust font size for better readability */
+  color: #333333; /* Dark text color for light mode */
+  line-height: 1.6; /* Improve line spacing */
+}
+
+/* Light Mode */
+.bio.light-mode h2 {
+  color: #333333; /* Dark text for light mode */
+}
+
+/* Dark Mode */
+.bio.dark-mode h2 {
+  color: #f5f5f5; /* Light text for dark mode */
+}
+
+/* Go Up Button Styling */
+.go-up-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--background-color); /* Match the theme */
+  color: var(--text-color); /* Match the theme */
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 1000;
+}
+.go-up-container {
+  position: fixed;
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Base styling */
+.go-up-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Fix mismatched background */
+body,
+.app {
+  background-color: var(--background-color); /* Ensure consistent background */
+  color: var(--text-color); /* Ensure consistent text color */
+  margin: 0;
+  padding: 0;
+}
+
+.go-up-container {
+  position: fixed;
+  bottom: 20px; /* Position at the bottom */
+  right: 20px; /* Position at the right */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+/* Go Up button styling */
+.go-up-container button {
+  background-color: var(--button-bg-color); /* Dynamic background for light/dark mode */
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--button-box-shadow);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Arrow styling using ::before pseudo-element */
+.go-up-container button::before {
+  content: '';
+  display: inline-block;
+  border: solid var(--button-text-color); /* Dynamic arrow color */
+  border-width: 0 3px 3px 0; /* Arrow shape */
+  width: 10px;
+  height: 10px;
+  transform: rotate(-135deg); /* Arrow pointing up */
+  transition: border-color 0.3s ease;
+}
+
+/* Hover effect */
+.go-up-container button:hover {
+  background-color: var(--button-hover-bg-color); /* Dynamic hover background */
+  transform: scale(1.1); /* Slight enlargement */
+}
+
+.go-up-container button:hover::before {
+  border-color: var(--text-color); /* Match text color on hover */
+}
+
+/* Light mode styles */
+.app.light-mode .go-up-container button {
+  background-color: #ffffff; /* Button background for light mode */
+}
+
+.app.light-mode .go-up-container button::before {
+  border-color: #000000; /* Arrow color for light mode */
+}
+
+/* Dark mode styles */
+.app.dark-mode .go-up-container button {
+  background-color: #121212; /* Button background for dark mode */
+}
+
+.app.dark-mode .go-up-container button::before {
+  border-color: #ffffff; /* Arrow color for dark mode */
+}
+
+/* Light mode variables */
+:root {
+  --background-color: transparent;
+  --text-color: #f5f5f5;
+  --button-bg-color: #333333;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #555555;
+  --button-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode variables */
+:root.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --button-bg-color: #ffffff;
+  --button-text-color: #000000;
+  --button-hover-bg-color: #f0f0f0;
+  --button-box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.child-element {
+  background: transparent; /* Inherit the parent's background */
+}
+

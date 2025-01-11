@@ -1,0 +1,207 @@
+/* Main container styling */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+    background-color: var(--background-color); /* Dynamic background */
+    color: var(--text-color); /* Dynamic text color */
+  }
+  
+  /* Cards container */
+  .carousel-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    flex-grow: 1;
+    padding: 0 40px; /* Ensure space between arrows and cards */
+    box-sizing: border-box;
+  }
+  
+  /* Buttons styling */
+  .carousel-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: var(--arrow-color); /* Dynamic arrow color */
+    transition: transform 0.2s ease, color 0.2s ease;
+    z-index: 10; /* Ensure buttons are on top */
+    -webkit-tap-highlight-color: transparent;
+    outline: none
+  }
+  
+  .carousel-button:hover {
+    transform: scale(1.2); /* Enlarge slightly on hover */
+    color: var(--arrow-hover-color); /* Dynamic hover color */
+}
+
+  
+.carousel-button:active {
+    transform: scale(1.1); /* Slightly smaller size on click */
+    color: var(--arrow-active-color); /* Dynamic active color */
+}
+  
+  .carousel-button:focus {
+    outline: none; /* Remove focus outline */
+    color: var(--arrow-hover-color); /* Keep hover color */
+  }
+  
+  .carousel-button:disabled {
+    color: #cccccc; /* Disabled state color */
+    cursor: not-allowed;
+  }
+
+  /* Light Mode Buttons */
+  .carousel-button.light {
+    color: #000000;
+  }
+
+  .carousel-button.dark {
+    color: #aaaaaa;
+  }
+
+.carousel-button.light:hover {
+  color: #000000; /* Darker hover effect */
+}
+
+.carousel-button.light:active {
+  color: #222222; /* Slightly darker when active */
+}
+
+/* Dark Mode Buttons */
+.carousel-button.dark {
+  color: #ffffff; /* Default dark mode color */
+}
+
+.carousel-button.dark:hover {
+  color: #cccccc; /* Lighter hover effect */
+}
+
+.carousel-button.dark:active {
+  color: #bbbbbb; /* Slightly lighter when active */
+}
+  
+  .carousel-button.left-button {
+    position: absolute;
+    left: 20px; /* Equal spacing on left */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-button.right-button {
+    position: absolute;
+    right: 20px; /* Equal spacing on right */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Card styles */
+  .about-card {
+    background: var(--card-bg-color); /* Dynamic card background */
+    border: 1px solid var(--card-border-color); /* Dynamic card border */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Default width for desktop */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .about-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--title-color); /* Dynamic title color */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .about-card-description {
+    font-size: 1rem;
+    color: var(--text-color); /* Dynamic text color */
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    /* Tablet: 2 cards */
+    .about-card {
+      width: 240px; /* Slightly smaller cards */
+      height: 280px;
+    }
+  
+    .carousel-button {
+      font-size: 2rem; /* Adjust arrow size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Mobile: 1 card */
+    .carousel-container {
+      flex-direction: column;
+      padding: 20px; /* Add padding for spacing on mobile */
+    }
+  
+    .carousel-cards {
+      flex-direction: column;
+      gap: 20px; /* Space between card and arrows */
+      padding: 0;
+    }
+  
+    .about-card {
+      width: 180px; /* Thinner card for mobile */
+      height: 260px; /* Slightly shorter card for mobile */
+    }
+  
+    .carousel-button {
+      font-size: 2rem;
+      margin: -7px; /* Remove unnecessary margins */
+    }
+  
+    .carousel-button.left-button {
+      left: 0; /* Align to edge */
+      margin-right: 20px; /* Add space between left arrow and card */
+    }
+  
+    .carousel-button.right-button {
+      right: 0; /* Align to edge */
+      margin-left: 20px; /* Add space between right arrow and card */
+    }
+  }
+  
+/* Light mode variables */
+:root {
+    --background-color: transparent;
+    --text-color: #000000;
+    --arrow-color: #ffffff; /* Default arrow color */
+    --arrow-hover-color: #ffffff;
+    --arrow-active-color: #222222;
+    --card-bg-color: #ffffff;
+    --card-border-color: #e0e0e0;
+  }
+  
+  /* Dark mode variables */
+  :root.dark {
+    --background-color: transparent;
+    --text-color: #000000;
+    --arrow-color: #222222; /* Light arrow in dark mode */
+    --arrow-hover-color: #cccccc;
+    --arrow-active-color: #aaaaaa;
+    --card-bg-color: #ffffff;
+    --card-border-color: #333333;
+  }
+
