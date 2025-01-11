@@ -321,19 +321,21 @@
 }
 
 .toggle-button {
-  position: absolute; 
-  top: 5%; 
-  right: 35%;
+  position: absolute; /* Position relative to the .profile-container */
+  top: 5.9%; /* Adjust based on your desired placement */
+  left: 62.1%; /* Place the button next to the profile */
+  transform: translate(-50%, -50%); /* Adjust to align vertically and horizontally */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px; 
-  height: 50px; 
+  width: 50px;
+  height: 50px;
   border: none;
   background: transparent;
   cursor: pointer;
   z-index: 1000;
 }
+
 
 @media (max-width: 768px) {
   .toggle-button {
@@ -411,7 +413,7 @@
   overflow-wrap: break-word; /* Compatibility for breaking text */
   margin-left: auto; /* Center horizontally */
   margin-right: auto; /* Center horizontally */
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .bio h2 {
@@ -561,3 +563,170 @@ body,
   background: transparent; /* Inherit the parent's background */
 }
 
+/* Center the button horizontally */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.download-button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: var(--button-bg); /* Background color for light mode */
+  color: var(--button-text); /* Text color for light mode */
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--button-shadow); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition */
+  margin-bottom: 20px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover effect */
+.download-button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+  box-shadow: 0 6px 8px var(--button-hover-shadow); /* Deeper shadow on hover */
+}
+
+.root-dark .download-button {
+  background-color: #ffffff; /* White background for dark mode */
+  color: #000000; /* Black text for dark mode */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Subtle shadow for dark mode */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.root-dark .download-button:hover {
+  background-color: #000000; /* Black background on hover for dark mode */
+  color: #ffffff; /* White text on hover for dark mode */
+  box-shadow: 0 6px 8px rgba(255, 255, 255, 0.15); /* Slightly deeper shadow */
+}
+
+/* Hover effect */
+.download-button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+  box-shadow: 0 6px 8px var(--button-hover-shadow); /* Deeper shadow on hover */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --button-bg: #ffffff; /* Light background for dark mode */
+    --button-text: #000000; /* Dark text for dark mode */
+    --button-hover-bg: #000000; /* Darker background on hover */
+    --button-hover-text: #ffffff; /* Light text on hover */
+    --button-shadow: rgba(255, 255, 255, 0.1);
+    --button-hover-shadow: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .download-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+:root {
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --button-hover-bg: #ffffff;
+  --button-hover-text: #000000;
+  --button-shadow: rgba(0, 0, 0, 0.1);
+  --button-hover-shadow: rgba(0, 0, 0, 0.15);
+}
+
+:root.dark {
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --button-hover-bg: #f0eeee;
+  --button-hover-text: #000000;
+  --button-shadow: rgba(0, 0, 0, 0.1);
+  --button-hover-shadow: rgba(255, 255, 255, 0.15);
+}
+
+.popup-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--button-bg); /* Black background */
+  color: var(--button-text); /* White text */
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fade-in-out 10s ease-in-out;
+}
+
+/* Fade-in and fade-out animation */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.popup-message {
+  position: fixed; /* Fix it to the viewport */
+  top: 10%; /* Adjust vertical position */
+  left: 61.9%; /* Center horizontally */
+  transform: translate(-50%, 0); /* Center align */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: var(--button-bg); /* Neutral dark background */
+  color: var(--button-text); /* White text for contrast */
+  padding: 8px 12px; /* Ensure comfortable spacing */
+  border-radius: 10px; /* Rounded corners for a clean dialog style */
+  font-size: rem; /* Use relative font size for responsiveness */
+  font-weight: 500; /* Slightly bold for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+  text-align: center; /* Center align text */
+  max-height: 40px; /* Restrict height for small windows */
+  max-width: 200px; /* Restrict width for small windows */
+  word-wrap: break-word; /* Handle long text gracefully */
+  font-weight: normal;
+}
+
+.popup-message::before {
+  content: "";
+  position: absolute;
+  bottom: -12px; /* Position the triangle below the box */
+  left: 52%; /* Center the triangle */
+  transform: translateX(-50%);
+  border-width: 8px; /* Adjust size of the triangle */
+  border-style: solid;
+  border-color: var(--button-bg) transparent transparent transparent; /* Triangle matches the background */
+}
+
+@media (max-width: 768px) {
+  .popup-message {
+    top: 21%; /* Adjust vertical position for smaller screens */
+    left: 67%;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 6px 10px; /* Reduce padding */
+    max-width: 150px; /* Limit width for small screens */
+  }
+
+  .popup-message::before {
+    left: 51%;
+    bottom: -10px; /* Adjust triangle position */
+    border-width: 6px; /* Smaller triangle */
+  }
+}

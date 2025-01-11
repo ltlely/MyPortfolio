@@ -14,11 +14,22 @@ function App() {
   const [mouseHovering, setMouseHovering] = useState(false); // Tracks if real mouse is hovering
   const [isVisible, setIsVisible] = useState(false);
   const [audioLoaded, setAudioLoaded] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   
   const audioRef = useRef(null);
   const about = useRef(null);
   const experience = useRef(null);
   const homepage = useRef(null);
+
+  useEffect(() => {
+    // Automatically hide the popup after 10 seconds
+    const timer = setTimeout(() => {
+      setShowPopup(false);
+    }, 10000);
+
+    // Cleanup timer on unmount
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToSection = (elementRef) => {
     if (elementRef?.current) {
@@ -135,6 +146,12 @@ function App() {
         />
       </button>
 
+       {showPopup && (
+        <div className="popup-message">
+          Switch to {isDark ? "Light Mode" : "Dark Mode"}
+        </div>
+      )}
+
       {/* Main Content */}
       <div className="parent-container">
         <div id="portfolio">
@@ -176,6 +193,16 @@ function App() {
 
       <div className={`bio ${isDark ? "dark-mode" : "light-mode"}`}>
         <h2>I am a Computer Science student seeking a Software Engineering Internship with a focus on web development. I am eager to contribute my skills in designing, developing, and optimizing web applications while gaining hands-on experience in a professional environment.</h2>
+      </div>
+
+      <div className="button-container">
+        <a
+          href="/LyLyTranResume.pdf" // Update to match the correct path
+          download
+          className="download-button"
+        >
+          Download CV
+        </a>
       </div>
 
       {/* Social Icons */}
