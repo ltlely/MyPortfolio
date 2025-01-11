@@ -121,7 +121,7 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
   }
   
-  .about-card-title {
+  .about-card-description {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--title-color); /* Dynamic title color */
@@ -129,12 +129,31 @@
     transition: color 0.3s ease;
   }
   
-  .about-card-description {
-    font-size: 1rem;
-    color: var(--text-color); /* Dynamic text color */
-    line-height: 1.6;
-    transition: color 0.3s ease;
+  .about-card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* Default height */
+    width: 120px; /* Default width */
+    margin-right: 70px;
+    margin-left: 55px;
+    object-fit: contain;
   }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) { /* Adjust for tablet and smaller devices */
+    .about-card-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px; /* Smaller height for mobile */
+      width: 150px; /* Smaller width for mobile */
+      margin-right: 20px;
+      margin-left: 15px;
+      object-fit: contain;
+    }
+  }
+  
   
   /* Responsive design */
   @media (max-width: 1024px) {

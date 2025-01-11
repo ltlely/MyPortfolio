@@ -141,7 +141,7 @@ function App() {
           <h1 ref={homepage}>Portfolio</h1>
         </div>
         <div id="content-header">
-          <h1 onClick={() => scrollToSection(about)}>About</h1>
+          <h1 onClick={() => scrollToSection(about)}>Skills</h1>
           <h1 onClick={() => scrollToSection(experience)}>Experience</h1>
         </div>
       </div>
@@ -193,12 +193,12 @@ function App() {
 
       {/* Sections */}
       <div className="about" ref={about}>
-        <h3>About Me</h3>
+        <h3 id="about-me">My Skills</h3>
         <About isDark={isDark}/>
       </div>
 
       <div className="experience" ref={experience}>
-        <h3>My Timeline</h3>
+        <h3 id="my-timeline">My Timeline</h3>
         <Experience />
       </div>
 
