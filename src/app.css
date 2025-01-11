@@ -281,7 +281,7 @@
   min-height: 50vh; /* Ensure full height to match screen */
   background-color: var(--background-color);
   color: var(--text-color);
-  margin-top: 200px;
+  margin-top: 25px;
 }
 
 #about-me, #my-timeline {
