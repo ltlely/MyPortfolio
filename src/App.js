@@ -185,50 +185,51 @@ function App() {
         style={{ zIndex: 5 }}
       ></div>
 
-
-      {/* Profile Section */}
-      <div className="parent-profile">
-        {showProfile && (
-          <img
-            className="profile"
-            src={`${process.env.PUBLIC_URL}/assets/profile.png`}
-            alt="Profile Icon"
-          />
-        )}
-      </div>
-
-      {/* Typewriter Section */}
-      <div className="parent-typewriter">
-        <div className="typewriter">
-          <h1>Hi, I'm LyLy</h1>
+      <div className="main-section">
+        {/* Profile Section */}
+        <div className="parent-profile">
+          {showProfile && (
+            <img
+              className="profile"
+              src={`${process.env.PUBLIC_URL}/assets/profile.png`}
+              alt="Profile Icon"
+            />
+          )}
         </div>
-      </div>
 
-      <div className={`bio ${isDark ? "dark-mode" : "light-mode"}`}>
-        <h2>I am a Computer Science student seeking a Software Engineering Internship with a focus on web development. I am eager to contribute my skills in designing, developing, and optimizing web applications while gaining hands-on experience in a professional environment.</h2>
-      </div>
+        {/* Typewriter Section */}
+        <div className="parent-typewriter">
+          <div className="typewriter">
+            <h1>Hi, I'm LyLy</h1>
+          </div>
+        </div>
 
-      <div className="button-container">
-        <a
-          href="/LyLyTranResume.pdf" // Update to match the correct path
-          download
-          className="download-button"
-        >
-          Download CV
-        </a>
-      </div>
+        <div className={`bio ${isDark ? "dark-mode" : "light-mode"}`}>
+          <h2>I am a Computer Science student seeking a Software Engineering Internship with a focus on web development. I am eager to contribute my skills in designing, developing, and optimizing web applications while gaining hands-on experience in a professional environment.</h2>
+        </div>
 
-      {/* Social Icons */}
-      <div className="social-icons">
-        <a href="https://www.linkedin.com/in/lylytran/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/linkedin.png" alt="LinkedIn" className="icon" />
-        </a>
-        <a href="https://github.com/ltlely" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/github.png" alt="GitHub" className="icon" />
-        </a>
-        <a href="mailto:lylytrr.121@gmail.com">
-          <img src="/assets/gmail.png" alt="Gmail" className="icon" />
-        </a>
+        <div className="button-container">
+          <a
+            href="/LyLyTranResume.pdf" // Update to match the correct path
+            download
+            className="download-button"
+          >
+            Download CV
+          </a>
+        </div>
+
+        {/* Social Icons */}
+        <div className="social-icons">
+          <a href="https://www.linkedin.com/in/lylytran/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/linkedin.png" alt="LinkedIn" className="icon" />
+          </a>
+          <a href="https://github.com/ltlely" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/github.png" alt="GitHub" className="icon" />
+          </a>
+          <a href="mailto:lylytrr.121@gmail.com">
+            <img src="/assets/gmail.png" alt="Gmail" className="icon" />
+          </a>
+        </div>
       </div>
 
       {/* Sections */}

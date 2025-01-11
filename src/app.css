@@ -340,7 +340,7 @@
 @media (max-width: 768px) {
   .toggle-button {
     position: absolute; 
-    top: 5.5%; 
+    top: 4.5%; 
     left: 69%;
     display: flex;
     align-items: center;
@@ -717,7 +717,7 @@ body,
 
 @media (max-width: 768px) {
   .popup-message {
-    top: 17%; /* Adjust vertical position for smaller screens */
+    top: 12%; /* Adjust vertical position for smaller screens */
     left: 69%;
     font-size: 0.9rem; /* Slightly smaller font size */
     padding: 6px 10px; /* Reduce padding */
@@ -728,5 +728,12 @@ body,
     left: 51%;
     bottom: -10px; /* Adjust triangle position */
     border-width: 6px; /* Smaller triangle */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    position: relative; /* Ensure the top property works */
+    top: -65px; /* Moves the section up */
   }
 }
