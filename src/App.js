@@ -129,6 +129,19 @@ function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowPopup(false); // Hide the popup when the user scrolls
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup scroll event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className={isDark ? "app dark-mode" : "app light-mode"}>
       {/* Toggle Button for Dark/Light Mode */}
@@ -213,7 +226,7 @@ function App() {
         <a href="https://github.com/ltlely" target="_blank" rel="noopener noreferrer">
           <img src="/assets/github.png" alt="GitHub" className="icon" />
         </a>
-        <a href="lylytrr.121@gmail.com">
+        <a href="mailto:lylytrr.121@gmail.com">
           <img src="/assets/gmail.png" alt="Gmail" className="icon" />
         </a>
       </div>

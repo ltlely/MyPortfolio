@@ -167,6 +167,15 @@ body,
 .timeline-event.visible {
   opacity: 1;
   transform: translateY(0);
+  left: -0.6%; /* Center horizontally */
+}
+
+@media (max-width: 768px) {
+  .timeline-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+    left: -1%; /* Center horizontally */
+  }
 }
 
 .timeline-event .content {
