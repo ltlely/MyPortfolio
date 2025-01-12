@@ -203,6 +203,42 @@
       margin-left: 20px; /* Add space between right arrow and card */
     }
   }
+
+  /* Landscape-specific styles for devices */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .carousel-container {
+    flex-direction: row; /* Adjust for more space in landscape */
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .carousel-cards {
+    flex-direction: row; /* Keep cards aligned horizontally */
+    gap: 20px;
+    padding: 10px; /* Add some spacing */
+  }
+
+  .about-card {
+    width: 200px; /* Slightly wider card for landscape */
+    height: 280px; /* Slightly taller card for landscape */
+  }
+
+  .carousel-button {
+    font-size: 2rem;
+    position: absolute; /* Ensure buttons are positioned correctly */
+    transform: translateY(-50%); /* Center buttons vertically */
+  }
+
+  .carousel-button.left-button {
+    left: 0px; /* Move left button farther out */
+    margin-right: 0;
+  }
+
+  .carousel-button.right-button {
+    right: 0px; /* Move right button farther out */
+    margin-left: 0;
+  }
+}
   
 /* Light mode variables */
 :root {

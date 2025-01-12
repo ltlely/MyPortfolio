@@ -346,17 +346,21 @@
   z-index: 1000;
 }
 
-
 @media (max-width: 768px) {
+  .toggle-button-container {
+    position: relative; /* Makes the .toggle-button position relative to this container */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+
   .toggle-button {
     position: absolute; 
-    top: 4.5%; 
+    margin-top: 38%; 
     left: 69%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px; 
-    height: 50px; 
+    width: 20px; 
+    height: 20px; 
     border: none;
     background: transparent;
     cursor: pointer;
@@ -747,3 +751,4 @@ body,
     top: -65px; /* Moves the section up */
   }
 }
+

@@ -145,19 +145,21 @@ function App() {
   return (
     <div className={isDark ? "app dark-mode" : "app light-mode"}>
       {/* Toggle Button for Dark/Light Mode */}
-      <button
-        className="toggle-button"
-        onClick={() => setIsDark(!isDark)}
-      >
-        <img
-          src={isDark ? "/assets/sun.png" : "/assets/moon.png"}
-          alt={isDark ? "Switch to light mode" : "Switch to dark mode"}
-          style={{
-            width: isDark ? "21px" : "20px",
-            height: isDark ? "21px" : "20px",
-          }}
-        />
-      </button>
+      <div className="toggle-button-container">
+        <button
+          className="toggle-button"
+          onClick={() => setIsDark(!isDark)}
+        >
+          <img
+            src={isDark ? "/assets/sun.png" : "/assets/moon.png"}
+            alt={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            style={{
+              width: "21px", // Remove or modify this
+              height: "21px", // Remove or modify this
+            }}
+          />
+        </button>
+      </div>
 
        {showPopup && (
         <div className="popup-message">

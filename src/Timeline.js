@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./timeline.css";
+import "./app.css";
+
 
 const Experience = () => {
   const timelineRef = useRef(null);
@@ -79,6 +81,7 @@ const Experience = () => {
 
   return (
     <div className="timeline-wrapper">
+   
       <div className="filter-container">
         <button
           className={`filter-button ${filter === "All" ? "active" : ""}`}
