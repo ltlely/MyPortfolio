@@ -202,7 +202,7 @@ function App() {
         {/* Typewriter Section */}
         <div className="parent-typewriter">
           <div className="typewriter">
-            <h1>Hi, I'm LyLy</h1>
+            <h1>Hi, I'm Lyly</h1>
           </div>
         </div>
 
