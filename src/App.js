@@ -207,7 +207,7 @@ function App() {
         </div>
 
         <div className={`bio ${isDark ? "dark-mode" : "light-mode"}`}>
-          <h2>I am a Computer Science student seeking a Software Engineering Internship with a focus on web development. I am eager to contribute my skills in designing, developing, and optimizing web applications while gaining hands-on experience in a professional environment.</h2>
+          <h2>I am a Computer Science student seeking for a Software Development Internship. I am eager to contribute my skills in designing, developing, and optimizing applications while gaining hands-on experience in a professional environment.</h2>
         </div>
 
         <div className="button-container">
