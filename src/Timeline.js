@@ -28,14 +28,14 @@ const Experience = () => {
   const experiences = [
     {
       category: "Experience",
-      title: "Software Engineer Intern",
+      title: "Software Developer Intern",
       location: "Frags AI, Falls Church, VA",
       date: "Jan 2025 – Present",
       description: [],
     },
     {
       category: "Experience",
-      title: "Software Engineer Intern",
+      title: "Software Developer Intern",
       location: "Verizon, Ashburn, VA",
       date: "Jun 2024 – Aug 2024",
       description: [
@@ -55,7 +55,7 @@ const Experience = () => {
     },
     {
       category: "Experience",
-      title: "Software Engineer Intern",
+      title: "Software Developer Intern",
       location: "Verizon, Falls Church, VA",
       date: "Jan 2024 - Jan 2024",
       description: [
