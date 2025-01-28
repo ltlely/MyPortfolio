@@ -31,7 +31,11 @@ const Experience = () => {
       title: "Software Developer Intern",
       location: "Frags AI, Falls Church, VA",
       date: "Jan 2025 – Present",
-      description: [],
+      description: [
+        "Collaborated cross-functionally with designers and stakeholders to build a responsive landing page using React, Javascript, HTML, and CSS, enhancing user experience and responsiveness.",
+        "Led a full-stack team and developed a plan to integrate Clerk’s API with different tech stacks, delivering a scalable and secure solution on time.",
+        "Currently integrating Stripe for payment management through React."
+      ],
     },
     {
       category: "Experience",
@@ -39,9 +43,9 @@ const Experience = () => {
       location: "Verizon, Ashburn, VA",
       date: "Jun 2024 – Aug 2024",
       description: [
-        "Conducted end-to-end testing of the Application Design Tool (ADT) and underlying APIs.",
-        "Designed and implemented the Page Object Model (POM) to improve test maintenance and readability.",
-        "Automated the testing process using Nightwatch.js, achieving an 87% increase in testing efficiency.",
+        "Conducted end-to-end testing of the Application Design Tool (ADT) and APIs, ensuring seamless functionality and scalability.",
+        "Improved test maintenance using the Page Object Model (POM) and automated testing with Nightwatch.js.",
+        "Boosted testing efficiency by 87%, reducing test case execution time from 2 minutes to 16 seconds through parallel testing.",
       ],
     },
     {
@@ -59,9 +63,9 @@ const Experience = () => {
       location: "Verizon, Falls Church, VA",
       date: "Jan 2024 - Jan 2024",
       description: [
-        "Developed the frontend of the newly improved Verizon Cloud Platform using Tailwind CSS, Next.js, and React.",
-        "Connected the frontend with backend APIs and a PostgreSQL database, unifying data from multiple sources.",
-        "Presented the redesigned platform to stakeholders and Verizon leadership.",
+        "Developed the frontend of the newly improved Verizon Cloud Platform using React, JavaScript, HTML, and CSS, enhancing customer and developer experiences with a simplified UI and modernized codebase.",
+        "Presented new design to stakeholders and leadership, earning positive feedback for streamlining processes and delivering high-impact results.",
+        "Integrated the frontend with backend, unifying data from multiple sources into a single application.",
       ],
     },
     {
