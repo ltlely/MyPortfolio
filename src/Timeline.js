@@ -26,6 +26,18 @@ const Experience = () => {
   }, [visibleEvents]);
 
   const experiences = [
+     {
+      category: "Projects",
+      title: "BubbleRaft",
+      location: "Personal Project",
+      date: "Dec 2025",
+      videoUrl: "/bubbleRaft.mp4",
+      description: [
+        "Developed an autonomous disaster-recovery robot in CoppeliaSim that navigates a simulated urban collapse environment featuring active fire hazards and structural debris, using sensors and mapping to safely detect victims and hazards.",
+        "Enhanced the robot’s architecture with advanced proximity and vision sensors, enabling real-time obstacle avoidance, victim identification, and internal environment mapping through waypoints, obstacle zones, and detection logs.",
+        "Demonstrated intelligent behavior through reasoning, uncertainty handling, and knowledge representation, while proposing future improvements such as reinforcement learning and A* path planning to optimize search efficiency and disaster-response performance..",
+      ],
+    },
     {
       category: "Experience",
       title: "Software Developer Intern",
@@ -80,6 +92,8 @@ const Experience = () => {
     },
   ];
 
+
+
   const filteredExperiences =
     filter === "All" ? experiences : experiences.filter((exp) => exp.category === filter);
 
@@ -105,6 +119,12 @@ const Experience = () => {
         >
           Awards
         </button>
+         <button
+          className={`filter-button ${filter === "Projects" ? "active" : ""}`}
+          onClick={() => setFilter("Projects")}
+        >
+          Projects
+        </button>
       </div>
       <div className="timeline" ref={timelineRef}>
         {filteredExperiences.map((exp, index) => (
@@ -121,6 +141,11 @@ const Experience = () => {
                   <li key={i}>{point}</li>
                 ))}
               </ul>
+              {exp.videoUrl && (
+                <video controls className="project-video">
+                  <source src={exp.videoUrl} type="video/mp4" />
+                </video>
+              )}
             </div>
           </div>
         ))}
