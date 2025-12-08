@@ -35,7 +35,7 @@ const Experience = () => {
       description: [
         "Developed an autonomous disaster-recovery robot in CoppeliaSim that navigates a simulated urban collapse environment featuring active fire hazards and structural debris, using sensors and mapping to safely detect victims and hazards.",
         "Enhanced the robot’s architecture with advanced proximity and vision sensors, enabling real-time obstacle avoidance, victim identification, and internal environment mapping through waypoints, obstacle zones, and detection logs.",
-        "Demonstrated intelligent behavior through reasoning, uncertainty handling, and knowledge representation, while proposing future improvements such as reinforcement learning and A* path planning to optimize search efficiency and disaster-response performance..",
+        "Demonstrated intelligent behavior through reasoning, uncertainty handling, and knowledge representation, while proposing future improvements such as reinforcement learning and A* path planning to optimize search efficiency and disaster-response performance.",
       ],
     },
     {
