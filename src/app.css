@@ -53,6 +53,7 @@
 .parent-typewriter {
   justify-content: center;
   display: flex;
+  margin-top: 20px;
 }
 
 .typewriter {

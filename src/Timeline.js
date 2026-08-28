@@ -26,27 +26,35 @@ const Experience = () => {
   }, [visibleEvents]);
 
   const experiences = [
-     {
-      category: "Projects",
-      title: "BubbleRaft",
-      location: "Personal Project",
-      date: "Dec 2025",
-      videoUrl: "/bubbleRaft.mp4",
-      description: [
-        "Developed an autonomous disaster-recovery robot in CoppeliaSim that navigates a simulated urban collapse environment featuring active fire hazards and structural debris, using sensors and mapping to safely detect victims and hazards.",
-        "Enhanced the robot’s architecture with advanced proximity and vision sensors, enabling real-time obstacle avoidance, victim identification, and internal environment mapping through waypoints, obstacle zones, and detection logs.",
-        "Demonstrated intelligent behavior through reasoning, uncertainty handling, and knowledge representation, while proposing future improvements such as reinforcement learning and A* path planning to optimize search efficiency and disaster-response performance.",
-      ],
-    },
     {
-      category: "Experience",
-      title: "Software Developer Intern",
-      location: "Frags AI, Falls Church, VA",
-      date: "Jan 2025 – Present",
+      category: "Projects",
+      title: "SproutLoss",
+      location: "Falls Church, VA",
+      date: "Mar 2026 – Present",
       description: [
-        "Collaborated cross-functionally with designers and stakeholders to build a responsive landing page using React, Javascript, HTML, and CSS, enhancing user experience and responsiveness.",
-        "Led a full-stack team and developed a plan to integrate Clerk’s API with different tech stacks, delivering a scalable and secure solution on time.",
-        "Currently integrating Stripe for payment management through React."
+        "Independently launched SproutLoss to production on the iOS App Store, serving 20+ customers, by developing the full-stack React Native/Expo application, Supabase backend, and Apple in-app purchasing system.",
+        "Expanded product accessibility across 7 languages and 3 progress timeframes by building localized weight tracking, goal analytics, trend visualizations, and personalized weekly summaries.",
+        "Created a gamified social experience featuring 154 customization items and 3 real-time interaction flows—friend requests, messaging, and push notifications—using Supabase Realtime and Edge Functions.",
+        "Strengthened account security across 3 authentication methods by integrating email, Google, and Apple sign-in with account-bound Pro entitlements, purchase recovery, and end-to-end data deletion workflows.",
+      ],
+      appStoreUrl: "https://apps.apple.com/us/app/sproutloss/id6800016799",
+      images: [
+        {
+          src: "/assets/sproutloss/track-progress.webp",
+          alt: "SproutLoss weight progress tracking and goal analytics",
+        },
+        {
+          src: "/assets/sproutloss/customize-character.webp",
+          alt: "SproutLoss character and outfit customization",
+        },
+        {
+          src: "/assets/sproutloss/themes-emotes.webp",
+          alt: "SproutLoss themes and emotes customization",
+        },
+        {
+          src: "/assets/sproutloss/friends-chat.webp",
+          alt: "SproutLoss friends and real-time messaging",
+        },
       ],
     },
     {
@@ -141,6 +149,32 @@ const Experience = () => {
                   <li key={i}>{point}</li>
                 ))}
               </ul>
+              {exp.appStoreUrl && (
+                <a
+                  className="app-store-link"
+                  href={exp.appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${exp.title} on the App Store (opens in a new tab)`}
+                >
+                  View on the App Store <span aria-hidden="true">↗</span>
+                </a>
+              )}
+              {exp.images && (
+                <div className="project-gallery" aria-label={`${exp.title} screenshots`}>
+                  {exp.images.map((image) => (
+                    <a
+                      key={image.src}
+                      href={exp.appStoreUrl || image.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-gallery-item"
+                    >
+                      <img src={image.src} alt={image.alt} loading="lazy" />
+                    </a>
+                  ))}
+                </div>
+              )}
               {exp.videoUrl && (
                 <video controls className="project-video">
                   <source src={exp.videoUrl} type="video/mp4" />

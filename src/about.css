@@ -141,6 +141,10 @@
     left: 0; /* Reset any horizontal offsets */
     top: 0; /* Reset any vertical offsets */
   }
+
+  .carousel-container.dark .about-card-image[src$="/expo.svg"] {
+    filter: invert(1);
+  }
   
   /* Mobile Styles */
   @media (max-width: 768px) { /* Adjust for tablet and smaller devices */

@@ -202,13 +202,12 @@ function App() {
         {/* Typewriter Section */}
         <div className="parent-typewriter">
           <div className="typewriter">
+            
             <h1>Hi, I'm Lyly</h1>
           </div>
         </div>
 
-        <div className={`bio ${isDark ? "dark-mode" : "light-mode"}`}>
-          <h2>I am a Computer Science student seeking for a Software Development Internship. I am eager to contribute my skills in designing, developing, and optimizing applications while gaining hands-on experience in a professional environment.</h2>
-        </div>
+        
 
         <div className="button-container">
           <a
@@ -222,9 +221,6 @@ function App() {
 
         {/* Social Icons */}
         <div className="social-icons">
-          <a href="https://www.linkedin.com/in/lylytran/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/linkedin.png" alt="LinkedIn" className="icon" />
-          </a>
           <a href="https://github.com/ltlely" target="_blank" rel="noopener noreferrer">
             <img src="/assets/github.png" alt="GitHub" className="icon" />
           </a>
