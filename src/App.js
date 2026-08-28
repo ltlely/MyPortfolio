@@ -1,6 +1,5 @@
 import './app.css';
-import React, { useState, useEffect } from "react";
-import { useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Experience from "./Timeline";
 import './timeline.css';
 import About from "./AboutCarousel";
@@ -20,6 +19,32 @@ function App() {
   const about = useRef(null);
   const experience = useRef(null);
   const homepage = useRef(null);
+
+  const playClickSound = useCallback(() => {
+    if (audioRef.current && audioLoaded) {
+      const playPromise = audioRef.current.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            audioRef.current.onended = () => {
+              setCursorPosition("hidden");
+              setShowProfile(true);
+            };
+          })
+          .catch((error) => {
+            console.error("Audio playback failed:", error);
+            // Still proceed with the animation
+            setCursorPosition("hidden");
+            setShowProfile(true);
+          });
+      }
+    } else {
+      // Proceed with animation even if audio isn't loaded
+      setCursorPosition("hidden");
+      setShowProfile(true);
+    }
+  }, [audioLoaded]);
 
   useEffect(() => {
     // Automatically hide the popup after 10 seconds
@@ -66,7 +91,7 @@ function App() {
     }, 2000);
 
     return () => clearTimeout(firstMoveTimer);
-  }, [mouseHovering]);
+  }, [mouseHovering, playClickSound]);
 
   useEffect(() => {
     audioRef.current = new Audio(`${process.env.PUBLIC_URL}/assets/click.mp3`);
@@ -83,33 +108,6 @@ function App() {
       }
     };
   }, []);
-
-  const playClickSound = () => {
-    if (audioRef.current && audioLoaded) {
-      const playPromise = audioRef.current.play();
-      
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            audioRef.current.onended = () => {
-              setCursorPosition("hidden");
-              setShowProfile(true);
-            };
-          })
-          .catch(error => {
-            console.error("Audio playback failed:", error);
-            // Still proceed with the animation
-            setCursorPosition("hidden");
-            setShowProfile(true);
-          });
-      }
-    } else {
-      // Proceed with animation even if audio isn't loaded
-      setCursorPosition("hidden");
-      setShowProfile(true);
-    }
-  };
-
 
   const handleMouseEnter = () => {
     setMouseHovering(true); // Mouse is hovering over Paste or Cursor
